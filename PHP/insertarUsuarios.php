@@ -21,6 +21,8 @@
         <input type="text" name="Edad" value="" placeholder=""></p>
         <p>Puntuación <br>
         <input type="text" name="Puntuacion" value="" placeholder=""></p>
-        <input type="submit" name="Enviar" value="Registrarse"> </p>
+        <p>Correo electrónico <br>
+        <input type="text" name="Correo" value="" placeholder=""></p>
+        <input type="submit" name="Enviar" value="Registrarse"></p>
       </fieldset>
     </form>

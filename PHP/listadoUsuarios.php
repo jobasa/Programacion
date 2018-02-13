@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="ISO-8859-1">
-    <title></title>
+    <title>Listado de usuarios</title>
   </head>
   <body>
     <h1 align="center">LISTADO DE LOS USUARIOS</h1>
@@ -16,6 +16,7 @@
       <th>Edad</th>
       <th>Curso</th>
       <th>Puntuacion</th>
+      <th>Correo</th>
     </tr>
 
     <?php
@@ -31,10 +32,11 @@
     $edad=$_POST["Edad"];
     $curso=$_POST["Curso"];
     $puntuacion=$_POST["Puntuacion"];
+    $correo=$_POST["Correo"];
 
     //Insertar usuario
-    $resultado = $conector->query("INSERT INTO usuarios(Nombre,Apellidos,Edad,Curso,Puntuacion)
-                                VALUES ('$nombre', '$apellidos', '$edad', '$curso', '$puntuacion');");
+    $resultado = $conector->query("INSERT INTO usuarios(Nombre,Apellidos,Edad,Curso,Puntuacion,Correo)
+                                VALUES ('$nombre', '$apellidos', '$edad', '$curso', '$puntuacion','$correo');");
 
 
     //Ejecuto una consulta en la base de datos
@@ -43,7 +45,7 @@
     ORDER BY Apellidos");
     //Muestra el numero de filas que hay en la tabla usuarios
     //echo "El numero de usuarios es: ".$resultado->num_rows."<br>";
-    
+
     //Recorremos todas las filas de la variable $resultado
     while ($fila=$resultado->fetch_assoc()) {
       echo "<tr>".
@@ -52,7 +54,8 @@
       "<th>".$fila['Apellidos']."</th>".
       "<th>".$fila['Edad']."</th>".
       "<th>".$fila['Curso']."</th>".
-      "<th>".$fila['Puntuacion']."</th>"."<br>".
+      "<th>".$fila['Puntuacion']."</th>".
+      "<th>".$fila['Correo']."</th>"."<br>".
       "</tr>";
     }
 
