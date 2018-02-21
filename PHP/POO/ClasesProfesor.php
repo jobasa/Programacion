@@ -1,18 +1,23 @@
 <?php
 
-class ClaseProfesor {
-  public $nombre='Paco';
-  public $asignatura='Programacion';
+class ClassProfesor {
+  private $nombre='Paco';
+  private $asignatura='Programacion';
 
-  public function mostrarNombre(){
-    return $this->nombre;
+  public function __construct($nombre,$asignatura){
+    $this->nombre=$nombre;
+    $this->asignatura=$asignatura;
   }
-  public function getAsignatura(){
-    return $this->asignatura;
-    echo '<br>';
-    echo 'la asignatura que imparte es: ';
+
+
+  public function imprimeNombre(){
+    echo $this->nombre;
+  }
+
+
+  public function imprimeAsignatura(){
     echo $this->asignatura;
-    echo '<br>';
+
   }
 }
 

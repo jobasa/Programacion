@@ -9,10 +9,10 @@ include 'ClasesProfesor.php';
    </head>
    <body>
      <?php
-      $profesor1 = new ClaseProfesor();
-      $profesor1->mostrarNombre();
-      $profesor1->getAsignatura();
-      echo "$profesor1";
+      $profesor1 = new ClassProfesor("Paco","Programacion");
+      $profesor1->imprimeNombre();
+      $profesor1->imprimeAsignatura();
+      //echo '$profesor1';
       ?>
    </body>
  </html>
