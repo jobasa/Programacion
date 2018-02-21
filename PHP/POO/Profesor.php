@@ -12,7 +12,7 @@ include 'ClasesProfesor.php';
       $profesor1 = new ClassProfesor("Paco","Programacion");
       $profesor1->imprimeNombre();
       $profesor1->imprimeAsignatura();
-      //echo '$profesor1';
+      
       ?>
    </body>
  </html>
