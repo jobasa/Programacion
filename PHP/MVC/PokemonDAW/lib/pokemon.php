@@ -25,6 +25,7 @@ class pokemon
   public function getNombre(){
     return $this->nombre;
   }
+
   //Restar vida
   public function restarVida($valorRestar){
     $this->vida=$this->vida-$valorRestar;
