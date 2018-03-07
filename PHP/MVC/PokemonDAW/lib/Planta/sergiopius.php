@@ -6,7 +6,7 @@ require_once 'lib/pokemon.php';
 class sergiopius extends pokemon
 {
 
-  function __construct(argument)
+  function __construct($nombre)
   {
     parent::setNombre("Soy sergiopius");
     parent::setVida(50);

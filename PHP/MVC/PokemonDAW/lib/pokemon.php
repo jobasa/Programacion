@@ -7,7 +7,7 @@ class pokemon
   //Vida
   private $vida=100;
   private $nombre="";
-  function __construct(argument)
+  function __construct()
   {
 
   }
