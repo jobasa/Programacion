@@ -21,6 +21,9 @@ $Fuego2= new pablmortar("Segundo heroe Pablmortar");
     $Fuego1->danyar(5);
     echo "Daño sobre el primer pokemon: ".$Fuego1->getVida()." puntos de vida que le quedan.<br>";
     echo "Segundo pokemon tiene ".$Fuego2->getVida()." puntos de vida<br>";
+    $Fuego2->restarVida(5);
+    $Fuego2->danyar(5);
+    echo "Daño por el segundo pokemon: ".$Fuego2->getVida()." puntos de vida que le quedan.";
     ?>
   </body>
 </html>
