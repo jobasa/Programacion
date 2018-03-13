@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Actualizacion de usuario</title>
+    <link rel="stylesheet" type="text/css" href="insertarUsuarios.css">
   </head>
  <body>
 

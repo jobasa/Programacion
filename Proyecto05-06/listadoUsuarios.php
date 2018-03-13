@@ -4,10 +4,11 @@
   <head>
     <meta charset="ISO-8859-1">
     <title>Listado de usuarios</title>
+    <link rel="stylesheet" type="text/css" href="insertarUsuarios.css">
   </head>
   <body>
     <h1 align="center">LISTADO DE LOS USUARIOS</h1>
-    <table width="70%" border="1px" align="center">
+    <table bgcolor="#00a5a5" width="70%" border="1px" align="center">
 
     <tr align="center">
       <th>ID</th>
@@ -41,7 +42,7 @@
       "<th>".$fila['Puntuacion']."</th>".
       "<th>".$fila['Correo']."</th>".
       "<th><a href="."actualizarUsuario2.php?codigo=".$fila['ID'].">Modificar</a></th>".
-      "<th><a href="."borrarUsuario.php?codigo=".$fila['ID'].">Borrar</a></th>"."<br>".
+      "<th><a href="."borrarUsuario.php?codigo=".$fila['ID'].">Borrar</a></th>".
       "</tr>";
     }
 

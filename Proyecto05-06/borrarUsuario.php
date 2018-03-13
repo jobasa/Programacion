@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>USUARIO ELIMINADO CORRECTAMENTE</h1>
-    <a href="listadoUsuarios.php">Ir al listado de usuarios.</a>
+    <a href="listadoUsuarios.php" style="color:#000000">Ir al listado de usuarios.</a>
     <?php
     //Conectar con la base de datos
     $conector = new mysqli("localhost", "root", "", "juegos");
