@@ -6,7 +6,6 @@ require "lib/Planta/sergiopius.php";
 $Fuego1= new joanite("Primer heroe Joanite");
 $Planta1= new juliowoodo("Primer villano juliowoodo");
 $Fuego2= new pablmortar("Segundo heroe Pablmortar");
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,10 +15,10 @@ $Fuego2= new pablmortar("Segundo heroe Pablmortar");
   </head>
   <body>
     <?php
-    echo "Primer pokemon tiene ".$Fuego1->getVida()." puntos de vida<br>";
+    echo "<p>"."Primer pokemon tiene ".$Fuego1->getVida()." puntos de vida<br>";
     $Fuego1->restarVida(5);
     $Fuego1->danyar(5);
-    echo "Daño sobre el primer pokemon: ".$Fuego1->getVida()." puntos de vida que le quedan.<br>";
+    echo "Daño sobre el primer pokemon: ".$Fuego1->getVida()." puntos de vida que le quedan.<br>"."</p>";
     echo "Segundo pokemon tiene ".$Fuego2->getVida()." puntos de vida<br>";
     $Fuego2->restarVida(5);
     $Fuego2->danyar(5);
