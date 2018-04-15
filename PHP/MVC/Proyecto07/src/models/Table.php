@@ -1,5 +1,5 @@
 <?php
-require_once "Db.php";
+include 'DbUsuarios.php';
 
 class Table
 {
@@ -9,7 +9,7 @@ class Table
 
   function __construct()
   {
-    $this->db=new Db();
+    $this->db=new DbUsuarios();
     $this->db->conectar();
     $this->conector=$this->db->getConector();
   }
@@ -17,7 +17,7 @@ class Table
 public function listarUsuarios()
 {
   //Ejecuto una consulta en la base de datos
-   $resultado = $conector->query("select *
+   $resultado = $this->conector->query("select *
       from usuarios
       ORDER BY Apellidos");
 

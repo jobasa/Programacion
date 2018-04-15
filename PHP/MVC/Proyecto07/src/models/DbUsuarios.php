@@ -1,32 +1,32 @@
 <?php
-require_once "../config/config.php";
+//include '../config/config.php';
 /**
  * Plantilla vacia de Db
  */
-class Db
+class DbUsuarios
 {
   //Propiedades de conexion
  private $server="";
  private $user="";
  private $pass="";
- private $db="";
+ private $dba="";
 
   //Propiedad conector
   private $conector;
 
   function __construct()
   {
-    global $config;
-    $this->server=$config["host"];
-    $this->user=$config["user"];
-    $this->pass=$config["pass"];
-    $this->db=$config["db"];
+    //global $config;
+    $this->server= "localhost"; //$config["host"];
+    $this->user="root"; //$config["user"];
+    $this->pass="";//$config["pass"];
+    $this->dba="juegos"; //$config["db"];
   }
 
   //funcion para gestionar la conexion
-   function conectar(){
+   public function conectar(){
     $conectorTmp = new mysqli ($this->server,$this->user,
-                                  $this->pass,$this->db) ;
+                                  $this->pass,$this->dba) ;
     if ($conectorTmp->connect_errno) {
       $this->conector=false;
     }else{
@@ -36,7 +36,7 @@ class Db
   }
 
   //Getters y setters
-  function getConector(){
+  public function getConector(){
     return $this->conector;
   }
 
@@ -75,12 +75,12 @@ class Db
 
     public function getDb()
     {
-        return $this->db;
+        return $this->dba;
     }
 
-    public function setDb($db)
+    public function setDb($dba)
     {
-        $this->db = $db;
+        $this->dba = $dba;
         return $this;
     }
 
