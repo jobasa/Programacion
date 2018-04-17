@@ -6,7 +6,7 @@
  */
 class config
 {
-  $config[];
+  $config=[];
   $config["host"]="localhost";
   $config["user"]="root";
   $config["pass"]="";
