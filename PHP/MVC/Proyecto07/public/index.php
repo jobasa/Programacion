@@ -1,4 +1,10 @@
+<?php
+//require_once __DIR__.'/../vendor/autoload.php';
+require_once "..\src\models\Table.php";
+
+?>
 <!DOCTYPE html>
+
 <html>
   <head>
     <meta charset="ISO-8859-1">
@@ -20,12 +26,15 @@
     </tr>
 
     <?php
-    include '../models/Table.php';
+      include '../src/config/config.php';
+    //conexion a la base de datos
+    //mirar en esta pagina: http://php.net/manual/es/function.mysql-fetch-assoc.php
+    $conexion=mysql_connect("localhost", "root", "", "juegos");
+    //Crear objeto de la clase Table
+    $resultado = new Table();
 
-    $objetolistado= new Table();
-
-    //Recorre filas
-    $resultado= $objetolistado->listarUsuarios();
+    // Ejecutar el método que realiza la consulta
+    $resultado->listarUsuarios();
 
     //Recorremos todas las filas de la variable $resultado
     while ($fila=$resultado->fetch_assoc()) {
@@ -41,7 +50,6 @@
       "<th><a href="."borrarUsuario.php?codigo=".$fila['ID'].">Borrar</a></th>".
       "</tr>";
     }
-
      ?>
 
     </table>
