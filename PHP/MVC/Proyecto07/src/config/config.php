@@ -2,15 +2,10 @@
 /**
  *
  */
-class config
+class Config
 {
-  $config=[];
-  $config["host"]="localhost";
-  $config["user"]="root";
-  $config["pass"]="";
-  $config["db"]="juegos";
-
+  const CFG_HOST="localhost";
+  const CFG_USER="root";
+  const CFG_PASS="";
+  const CFG_DB="juegos";
 }
-
-
- ?>

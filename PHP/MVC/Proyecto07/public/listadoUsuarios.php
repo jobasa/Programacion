@@ -1,4 +1,8 @@
-
+<?php
+require_once("../public/Db.php");
+$baseDatos=new Db();
+$baseDatos->conectar();
+?>
 <!DOCTYPE html>
 <html>
   <head>
