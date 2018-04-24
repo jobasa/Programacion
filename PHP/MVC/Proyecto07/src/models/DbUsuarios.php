@@ -1,5 +1,5 @@
 <?php
-//include '../config/config.php';
+require_once("../src/config/config.php");
 /**
  * Plantilla vacia de Db
  */
@@ -16,11 +16,10 @@ class DbUsuarios
 
   function __construct()
   {
-    //global $config;
-    $this->server= "localhost"; //$config["host"];
-    $this->user="root"; //$config["user"];
-    $this->pass="";//$config["pass"];
-    $this->dba="juegos"; //$config["db"];
+    $this->server=Config::CFG_HOST;
+    $this->user=Config::CFG_USER;
+    $this->pass=Config::CFG_PASS;
+    $this->dba=Config::CFG_DB;
   }
 
   //funcion para gestionar la conexion

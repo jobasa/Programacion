@@ -1,10 +1,6 @@
 <?php
+require_once("../src/models/Table.php");
 
-//Abro conexion con la base de datos
-$conector = new mysqli("localhost", "root", "", "juegos");
-if ($conector->connect_errno) {
-   echo "Fallo al conectar a MySQL: " . $mysqli->connect_error;
-}
 
 //Recoger parametros del post
 $nombre=$_POST["nombre"];
@@ -24,11 +20,13 @@ if (!is_numeric($edad)) {
   echo "LA PUNTUACION NO ES ENTERA. USUARIO NO CREADO";
 }else {
 
-  //Insertar usuario
-  $resultado = $conector->query("INSERT INTO usuarios(Nombre,Apellidos,Edad,Curso,Puntuacion,Correo)
-                                VALUES ('$nombre', '$apellidos', '$edad', '$curso', '$puntuacion','$correo');");
+//creo la conexion con la base de datos
+  $resultado= new Table();
+//insertar un usuario
+  $resultado->insertarUsuario($nombre, $apellidos, $edad, $curso, $puntuacion, $correo);
+
 
   echo "<h1>USUARIO CREADO CORRECTAMENTE</h1>
-  <a href="."listadoUsuarios.php".">Ir al listado de usuarios.</a>";
+  <a href="."index.php".">Ir al index de usuarios.</a>";
 }
  ?>

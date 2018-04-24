@@ -1,8 +1,8 @@
 <?php
-$conector = new mysqli("localhost", "root", "", "juegos");
-if ($conector->connect_errno) {
-   echo "Fallo al conectar a MySQL: " . $mysqli->connect_error;
-}
+//Para poder utilizar la clase Table
+require_once("../src/models/Table.php");
+
+
 //Recoger parametros del post
 $id=$_POST["ID"];
 $nombre=$_POST["nombre"];
@@ -17,17 +17,19 @@ if (!is_numeric($edad)) {
   echo "LA EDAD NO ES ENTERA. USUARIO NO CREADO";
 
 }elseif (!is_numeric($curso)) {
-  echo "LA CURSO NO ES ENTERA. USUARIO NO CREADO";
+  echo "EL CURSO NO ES ENTERO. USUARIO NO CREADO";
 }elseif (!is_numeric($puntuacion)) {
   echo "LA PUNTUACION NO ES ENTERA. USUARIO NO CREADO";
 }else {
+
+  //creo la conexion con la base de datos
+  $resultado= new Table();
 //Consulta para actualizar el usuario
-  $resultado = $conector->query("UPDATE usuarios
-                                SET Nombre='$nombre',Apellidos='$apellidos',Edad='$edad',Curso='$curso',Puntuacion='$puntuacion',Correo='$correo'
-                                WHERE ID='$id'");
+  $resultado->actualizarUsuario($nombre, $apellidos, $edad, $curso, $puntuacion, $correo, $id);
+
 echo "<h1>EL USUARIO HA SIDO ACTUALIZADO CORRECTAMENTE</h1>
 <!--Link que lleva a la pagina de listadoUsuarios.php-->
-<a href="."listadoUsuarios.php".">Ir al listado de usuarios.</a>";
+<a href="."index.php".">Ir al index de usuarios.</a>";
 }
 
  ?>

@@ -9,3 +9,5 @@ class Config
   const CFG_PASS="";
   const CFG_DB="juegos";
 }
+
+?>

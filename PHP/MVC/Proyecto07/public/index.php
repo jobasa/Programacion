@@ -29,15 +29,16 @@ require_once("..\src\models\Table.php");
       include '../src/config/config.php';
     //conexion a la base de datos
     //mirar en esta pagina: http://php.net/manual/es/function.mysql-fetch-assoc.php
-    $conexion=mysql_connect("localhost", "root", "", "juegos");
+    //$conexion=mysql_connect("localhost", "root", "", "juegos");
     //Crear objeto de la clase Table
     $resultado = new Table();
+    
 
     // Ejecutar el método que realiza la consulta
-    $resultado->listarUsuarios();
+    $conector = $resultado->listarUsuarios();
 
     //Recorremos todas las filas de la variable $resultado
-    while ($fila=$resultado->fetch_assoc()) {
+    while ($fila=$conector->fetch_assoc()) {
       echo "<tr>".
       "<th>".$fila['ID']."</th>".
       "<th>".$fila['Nombre']."</th>".

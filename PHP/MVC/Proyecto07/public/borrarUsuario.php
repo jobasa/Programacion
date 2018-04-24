@@ -6,18 +6,16 @@
   </head>
   <body>
     <h1>USUARIO ELIMINADO CORRECTAMENTE</h1>
-    <a href="listadoUsuarios.php" style="color:#000000">Ir al listado de usuarios.</a>
+    <a href="index.php" style="color:#000000">Ir al index de usuarios.</a>
     <?php
-    //Conectar con la base de datos
-    $conector = new mysqli("localhost", "root", "", "juegos");
+    require_once("../src/models/Table.php");
 
-    if ($conector->connect_errno) {
-       echo "Fallo al conectar a MySQL: " . $mysqli->connect_error;
-    }
     //Recojer con GET la variable "codigo" de listadoUsuarios.php
     $usuarioBorrado=$_GET["codigo"];
-    $resultado = $conector->query("DELETE FROM usuarios
-                                  WHERE ID=".$usuarioBorrado);
+
+    //creo la conexion con la base de datos
+    $resultado= new Table();
+    $resultado->borrarUsuario($usuarioBorrado)
      ?>
 
   </body>
