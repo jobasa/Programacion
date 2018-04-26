@@ -1,7 +1,6 @@
 <?php
 //require_once __DIR__.'/../vendor/autoload.php';
-require_once "..\src\models\Table.php";
-
+require_once("..\src\models\Table.php");
 ?>
 <!DOCTYPE html>
 
@@ -9,7 +8,7 @@ require_once "..\src\models\Table.php";
   <head>
     <meta charset="ISO-8859-1">
     <title>Listado de usuarios</title>
-    <link rel="stylesheet" type="text/css" href="insertarUsuarios.css">
+    <link rel="stylesheet" type="text/css" href="css/insertarUsuarios.css">
   </head>
   <body>
     <h1 align="center">LISTADO DE LOS USUARIOS</h1>
@@ -26,18 +25,17 @@ require_once "..\src\models\Table.php";
     </tr>
 
     <?php
-      include '../src/config/config.php';
-    //conexion a la base de datos
-    //mirar en esta pagina: http://php.net/manual/es/function.mysql-fetch-assoc.php
-    $conexion=mysql_connect("localhost", "root", "", "juegos");
+    require_once("../src/config/config.php");
+
     //Crear objeto de la clase Table
     $resultado = new Table();
 
+
     // Ejecutar el método que realiza la consulta
-    $resultado->listarUsuarios();
+    $conector = $resultado->listarUsuarios();
 
     //Recorremos todas las filas de la variable $resultado
-    while ($fila=$resultado->fetch_assoc()) {
+    while ($fila=$conector->fetch_assoc()) {
       echo "<tr>".
       "<th>".$fila['ID']."</th>".
       "<th>".$fila['Nombre']."</th>".

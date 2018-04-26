@@ -5,7 +5,7 @@ class Table
 {
   //Generar el conector a la base de datos
   private $db;
-  private $conector;
+  public $conector;
 
   function __construct()
   {
@@ -24,6 +24,25 @@ public function listarUsuarios()
    return $resultado;
 }
 
+
+public function actualizarUsuario($nombre, $apellidos, $edad, $curso, $puntuacion, $correo, $id)
+{
+  $resultado = $this->conector->query("UPDATE usuarios
+                                SET Nombre='$nombre',Apellidos='$apellidos',Edad='$edad',Curso='$curso',Puntuacion='$puntuacion',Correo='$correo'
+                                WHERE ID='$id'");
+}
+
+public function borrarUsuario($usuarioBorrado)
+{
+  $resultado = $this->conector->query("DELETE FROM usuarios
+                                WHERE ID=".$usuarioBorrado);
+}
+
+public function insertarUsuario($nombre, $apellidos, $edad, $curso, $puntuacion, $correo)
+{
+  $resultado = $this->conector->query("INSERT INTO usuarios(Nombre,Apellidos,Edad,Curso,Puntuacion,Correo)
+                                VALUES ('$nombre', '$apellidos', '$edad', '$curso', '$puntuacion','$correo');");
+}
 
 }
 
