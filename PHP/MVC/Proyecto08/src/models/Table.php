@@ -1,7 +1,7 @@
 <?php
-include 'DbUsuarios.php';
+namespace Daw\models;
 
-class Table
+class Table extends DbUsuarios
 {
   //Generar el conector a la base de datos
   private $db;

@@ -1,6 +1,6 @@
 <?php
-//require_once __DIR__.'/../vendor/autoload.php';
-require_once("..\src\models\Table.php");
+require_once __DIR__.'/../vendor/autoload.php';
+use Daw\models\Table as Table;
 ?>
 <!DOCTYPE html>
 

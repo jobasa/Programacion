@@ -1,5 +1,5 @@
 <?php
-require_once("../src/config/config.php");
+namespace Daw\models;
 /**
  * Plantilla vacia de Db
  */
