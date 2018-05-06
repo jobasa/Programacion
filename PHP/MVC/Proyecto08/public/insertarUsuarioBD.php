@@ -1,5 +1,6 @@
 <?php
-require_once("../src/models/Table.php");
+require_once ("../src/models/Table.php");
+use Daw\ns1 as TT;
 
 
 //Recoger parametros del post
@@ -21,7 +22,7 @@ if (!is_numeric($edad)) {
 }else {
 
 //creo la conexion con la base de datos
-  $resultado= new Table();
+  $resultado= new TT\Table();
 //insertar un usuario
   $resultado->insertarUsuario($nombre, $apellidos, $edad, $curso, $puntuacion, $correo);
 

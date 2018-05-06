@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
-use Daw\models\Table as Table;
+require('../src/models/Table.php');
+use Daw\ns1\Table as Table;
 ?>
 <!DOCTYPE html>
 
@@ -25,7 +26,7 @@ use Daw\models\Table as Table;
     </tr>
 
     <?php
-    require_once("../src/config/config.php");
+
 
     //Crear objeto de la clase Table
     $resultado = new Table();
@@ -37,15 +38,15 @@ use Daw\models\Table as Table;
     //Recorremos todas las filas de la variable $resultado
     while ($fila=$conector->fetch_assoc()) {
       echo "<tr>".
-      "<th>".$fila['ID']."</th>".
-      "<th>".$fila['Nombre']."</th>".
-      "<th>".$fila['Apellidos']."</th>".
-      "<th>".$fila['Edad']."</th>".
-      "<th>".$fila['Curso']."</th>".
-      "<th>".$fila['Puntuacion']."</th>".
-      "<th>".$fila['Correo']."</th>".
-      "<th><a href="."actualizarUsuario2.php?codigo=".$fila['ID'].">Modificar</a></th>".
-      "<th><a href="."borrarUsuario.php?codigo=".$fila['ID'].">Borrar</a></th>".
+      "<th>".$fila['id']."</th>".
+      "<th>".$fila['nombre']."</th>".
+      "<th>".$fila['apellidos']."</th>".
+      "<th>".$fila['edad']."</th>".
+      "<th>".$fila['curso']."</th>".
+      "<th>".$fila['puntuacion']."</th>".
+      "<th>".$fila['correo']."</th>".
+      "<th><a href="."actualizarUsuario2.php?codigo=".$fila['id'].">Modificar</a></th>".
+      "<th><a href="."borrarUsuario.php?codigo=".$fila['id'].">Borrar</a></th>".
       "</tr>";
     }
      ?>

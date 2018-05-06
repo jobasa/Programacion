@@ -1,5 +1,8 @@
 <?php
-namespace Daw\models;
+namespace Daw\ns2;
+require_once ("../src/config/config.php");
+use Daw\ns3 as CC;
+
 /**
  * Plantilla vacia de Db
  */
@@ -16,15 +19,15 @@ class DbUsuarios
 
   function __construct()
   {
-    $this->server=Config::CFG_HOST;
-    $this->user=Config::CFG_USER;
-    $this->pass=Config::CFG_PASS;
-    $this->dba=Config::CFG_DB;
+    $this->server=CC\Config::CFG_HOST;
+    $this->user=CC\Config::CFG_USER;
+    $this->pass=CC\Config::CFG_PASS;
+    $this->dba=CC\Config::CFG_DB;
   }
 
   //funcion para gestionar la conexion
    public function conectar(){
-    $conectorTmp = new mysqli ($this->server,$this->user,
+    $conectorTmp = new \mysqli ($this->server,$this->user,
                                   $this->pass,$this->dba) ;
     if ($conectorTmp->connect_errno) {
       $this->conector=false;

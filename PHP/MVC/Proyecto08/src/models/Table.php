@@ -1,7 +1,11 @@
 <?php
-namespace Daw\models;
+namespace Daw\ns1;
+require('DbUsuarios.php');
+use Daw\ns2 as AA;
 
-class Table extends DbUsuarios
+
+
+class Table
 {
   //Generar el conector a la base de datos
   private $db;
@@ -9,7 +13,7 @@ class Table extends DbUsuarios
 
   function __construct()
   {
-    $this->db=new DbUsuarios();
+    $this->db=new AA\DbUsuarios();
     $this->db->conectar();
     $this->conector=$this->db->getConector();
   }

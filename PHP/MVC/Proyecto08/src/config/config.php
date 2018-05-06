@@ -1,4 +1,5 @@
 <?php
+namespace Daw\ns3;
 /**
  *
  */
