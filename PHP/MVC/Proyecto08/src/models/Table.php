@@ -1,5 +1,5 @@
 <?php
-namespace Daw\table;//ns1=Table
+namespace Daw\Table;//ns1=Table
 require('DbUsuarios.php');
 use Daw\db as AA;
 
