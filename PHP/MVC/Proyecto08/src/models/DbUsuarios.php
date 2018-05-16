@@ -1,7 +1,7 @@
 <?php
-namespace Daw\ns2;
+namespace Daw\db;
 require_once ("../src/config/config.php");
-use Daw\ns3 as CC;
+use Daw\config as CC;
 
 /**
  * Plantilla vacia de Db

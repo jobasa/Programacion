@@ -1,7 +1,7 @@
 <?php
 //Para poder utilizar la clase Table
 require_once("../src/models/Table.php");
-use Daw\ns1\Table as Table;
+use Daw\table\Table as Table;
 
 
 //Recoger parametros del post

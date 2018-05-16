@@ -1,7 +1,7 @@
 <?php
-namespace Daw\ns1;
+namespace Daw\table;//ns1=Table
 require('DbUsuarios.php');
-use Daw\ns2 as AA;
+use Daw\db as AA;
 
 
 

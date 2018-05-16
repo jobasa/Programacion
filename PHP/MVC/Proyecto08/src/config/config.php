@@ -1,5 +1,5 @@
 <?php
-namespace Daw\ns3;
+namespace Daw\config;
 /**
  *
  */

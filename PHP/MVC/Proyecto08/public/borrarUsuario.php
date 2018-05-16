@@ -9,7 +9,7 @@
     <a href="index.php" style="color:#000000">Ir al index de usuarios.</a>
     <?php
     require_once("../src/models/Table.php");
-    use Daw\ns1\Table as Table;
+    use Daw\table\Table as Table;
 
     //Recojer con GET la variable "codigo" de listadoUsuarios.php
     $usuarioBorrado=$_GET["codigo"];

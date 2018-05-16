@@ -1,6 +1,6 @@
 <?php
 require_once ("../src/models/Table.php");
-use Daw\ns1 as TT;
+use Daw\table as TT;
 
 
 //Recoger parametros del post

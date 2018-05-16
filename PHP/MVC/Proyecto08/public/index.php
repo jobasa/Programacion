@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
 require('../src/models/Table.php');
-use Daw\ns1\Table as Table;
+use Daw\table\Table as Table;
 ?>
 <!DOCTYPE html>
 
