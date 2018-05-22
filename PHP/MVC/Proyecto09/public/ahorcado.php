@@ -1,5 +1,10 @@
 <!DOCTYPE html>
+<?php
+require_once __DIR__.'/../vendor/autoload.php';
+require('../src/models/Table.php');
+use Daw\table\Table as Table;
 
+ ?>
 <html>
   <head>
     <meta charset="utf-8">
@@ -19,6 +24,12 @@
     </style>
   </head>
   <body>
+    <?php
+    //Recoger parametros del post
+    $nombre=$_POST["usuario"];
+    echo $nombre;
+
+     ?>
     <h1 style="background-color: #008080">Bienvenido al ahorcado, a jugar!</h1>
     <form id="formularioPrueba" action="#" method="post">
       <div><p id="dibujo" value=""></p></div>
