@@ -4,7 +4,13 @@ require_once __DIR__.'/../vendor/autoload.php';
 require('../src/models/Table.php');
 use Daw\table\Table as Table;
 
+require('../src/models/sesiones.php');
+use Daw\sesion\Sesion as Sesion;
+$nuevaSesion = new sesion(); //crea un objeto de la clase sesion
+$x= $nuevaSesion->comprobar_sesion(); //llama al metodo del objeto
+
  ?>
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -25,8 +31,8 @@ use Daw\table\Table as Table;
   </head>
   <body>
     <?php
-    //Recoger parametros del post
-    $nombre=$_POST["usuario"];
+    //Recoger la sessión
+    $nombre= $nuevaSesion->getUsuario();
     echo $nombre;
 
      ?>

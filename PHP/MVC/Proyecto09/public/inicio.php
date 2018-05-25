@@ -2,6 +2,12 @@
 require_once __DIR__.'/../vendor/autoload.php';
 require('../src/models/Table.php');
 use Daw\table\Table as Table;
+
+
+require('../src/models/sesiones.php');
+use Daw\sesion\Sesion as Sesion;
+$cerrarSesion = new sesion(); //crea un objeto de la clase sesion
+$x= $cerrarSesion->sesion_cerrada(); //llama al metodo del objeto
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
