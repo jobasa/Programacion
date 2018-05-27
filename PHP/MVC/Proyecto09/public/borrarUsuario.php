@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>USUARIO ELIMINADO CORRECTAMENTE</h1>
-    <a href="index.php" style="color:#000000">Ir al index de usuarios.</a>
+    <a href="listadoUsuario.php" style="color:#000000">Ir al index de usuarios.</a>
     <?php
     require_once("../src/models/Table.php");
     use Daw\table\Table as Table;

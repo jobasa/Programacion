@@ -48,6 +48,16 @@ public function insertarUsuario($nombre, $apellidos, $edad, $curso, $puntuacion,
                                 VALUES ('$nombre', '$apellidos', '$edad', '$curso', '$puntuacion','$correo');");
 }
 
+public function getPuntuacion($id)
+{
+
+  $resultado= $this->conector->query("SELECT nombre,apellidos,puntuacion
+  FROM usuarios
+  WHERE id='$id'");
+
+  return $resultado;
+}
+
 }
 
 ?>

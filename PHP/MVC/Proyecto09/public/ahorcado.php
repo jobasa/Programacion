@@ -3,6 +3,8 @@
 require_once __DIR__.'/../vendor/autoload.php';
 require('../src/models/Table.php');
 use Daw\table\Table as Table;
+$puntuacion = new Table();
+
 
 require('../src/models/sesiones.php');
 use Daw\sesion\Sesion as Sesion;
@@ -32,11 +34,22 @@ $x= $nuevaSesion->comprobar_sesion(); //llama al metodo del objeto
   <body>
     <?php
     //Recoger la sessión
-    $nombre= $nuevaSesion->getUsuario();
-    echo $nombre;
+    $id= $nuevaSesion->getUsuario();
+
+
+
+    //Recojer nombre,apellidos y puntuacion (de la clase Table)
+    $y= $puntuacion->getPuntuacion($id);
+    $fila=$y->fetch_assoc();
+    if ($fila['nombre']=="admin") {
+      header('Location: listadoUsuario.php');
+
+    }
+
+
 
      ?>
-    <h1 style="background-color: #008080">Bienvenido al ahorcado, a jugar!</h1>
+    <h1 style="background-color: #008080">Bienvenido al ahorcado <?php echo $fila['nombre']." ".$fila['apellidos'].". Tu puntuacion es de: ".$fila['puntuacion'];  ?>, a jugar!</h1>
     <form id="formularioPrueba" action="#" method="post">
       <div><p id="dibujo" value=""></p></div>
       <div>Introduce una letra:<br>
@@ -47,6 +60,7 @@ $x= $nuevaSesion->comprobar_sesion(); //llama al metodo del objeto
       <p id="resultado" value=""></p></div>
       <p><button type="button" name="Comprobar" onclick="comprobar()">Comprobar</button></p>
     </form>
+      <a href="inicio.php">Log Out</a>
       <script type="text/javascript" src=js/Ahorcado.js></script>
   </body>
 </html>

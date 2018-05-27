@@ -30,7 +30,7 @@ if (!is_numeric($edad)) {
 
 echo "<h1>EL USUARIO HA SIDO ACTUALIZADO CORRECTAMENTE</h1>
 <!--Link que lleva a la pagina de listadoUsuarios.php-->
-<a href="."index.php".">Ir al index de usuarios.</a>";
+<a href="."listadoUsuario.php".">Ir al index de usuarios.</a>";
 }
 
  ?>

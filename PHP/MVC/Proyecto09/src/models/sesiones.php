@@ -38,13 +38,18 @@ class Sesion
   {
     return $this->usuario;
   }
-
-  public function comprobar_puntuacion()
+  public function getNombre()
   {
-    //falta saber como pasar el id
-    $puntuacion= $this->puntuacion->query("SELECT puntuacion
+
+  }
+
+  public function getPuntuacion()
+  {
+
+    $this->puntuacion= $this->puntuacion->query("SELECT puntuacion
     FROM usuarios
-    WHERE nombre=$id'";);
+    WHERE id=".$this->id);
+    return $this->puntuacion;
   }
 
 }

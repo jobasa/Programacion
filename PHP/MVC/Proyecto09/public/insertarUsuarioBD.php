@@ -28,6 +28,6 @@ if (!is_numeric($edad)) {
 
 
   echo "<h1>USUARIO CREADO CORRECTAMENTE</h1>
-  <a href="."index.php".">Ir al index de usuarios.</a>";
+  <a href="."listadoUsuario.php".">Ir al index de usuarios.</a>";
 }
  ?>
